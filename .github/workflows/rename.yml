@@ -1,0 +1,21 @@
+name: Rename Template and Auto-Commit
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  rename-and-commit:
+    runs-on: ubuntu-latest
+    if: github.event.repository.is_template == false
+
+    permissions:
+      # Give the default GITHUB_TOKEN write permission to commit and push the changed files back to the repository.
+      contents: write
+      pull-requests: write
+    
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: kota65535/github-template-rename-action@v1
