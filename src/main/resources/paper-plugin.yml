@@ -1,4 +1,4 @@
-name: untitled
+name: test
 version: '0.1-SNAPSHOT'
-main: gg.leg.untitled.Untitled
+main: gg.leg.test.Test
 api-version: '1.21'
